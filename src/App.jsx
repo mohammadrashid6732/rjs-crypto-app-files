@@ -1,5 +1,6 @@
+import Layout from "./components/Layout";
 function App() {
-  return <h1>Crypto App</h1>;
+  return <Layout></Layout>;
 }
 
 export default App;

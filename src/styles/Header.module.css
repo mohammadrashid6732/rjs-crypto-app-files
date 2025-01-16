@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(20, 44, 198);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.container div {
+  display: flex;
+}
+.container a {
+  color: rgb(6, 6, 37);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
