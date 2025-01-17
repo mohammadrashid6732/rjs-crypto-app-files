@@ -1,22 +1,31 @@
 import { useEffect, useState } from "react";
+import { TailSpin } from "react-loader-spinner";
+
 import { getCoinData } from "../../services/cryptoApi";
 import TableCoins from "../modules/TableCoins";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const fetchCoin = async () => {
-      const res = await fetch(getCoinData());
-      const json = await res.json();
-      console.log(json);
-      setCoins(json);
-    };
-    fetchCoin();
+    try {
+      const fetchCoin = async () => {
+        const res = await fetch(getCoinData());
+        const json = await res.json();
+        console.log(json);
+        setCoins(json);
+        setLoading(false);
+      };
+      fetchCoin();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
   return (
-    <div>
-      <TableCoins coins={coins} />
-    </div>
+    <>
+      <TableCoins coins={coins} loading={loading} />
+    </>
   );
 }
 
