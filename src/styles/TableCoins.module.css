@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 100px;
+  min-height: 1000px;
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table thead {
+  border-bottom: 2px solid #fff;
+  margin-bottom: 20px;
+}
+.table th {
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 10px 0;
+}
+@media (max-width: 600px) {
+  .table {
+    display: block;
+    overflow-y: scroll;
+  }
+
+  .table th {
+    padding: 0 10px;
+  }
+}
